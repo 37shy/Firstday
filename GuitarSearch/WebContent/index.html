@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Guitar Seacher</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	
+			$("#btnQuery").click(function(){	
+				$.get("SearchGuitar", $("#myform").serializeArray(), function(data){
+					var html = "";
+					$("#r-tbody tr:gt(0)").remove();
+					if(data['success'] === true) {
+						for(var i=0; i < data.row.length; i++) {
+							var r = data.row[i];
+							html += "<tr><td>" + r.serialNumber + "</td>";
+							html += "<td>" + r.builder + "</td>";
+							html += "<td>" + r.model + "</td>";
+							html += "<td>" + r.type + "</td>";
+							html += "<td>" + r.backWood + "</td>";
+							html += "<td>" + r.topWood + "</td>";		
+							html += "<td>" + r.price + "</td></tr>";
+						}
+						$("#r-tbody").append(html);
+					}else if(data['success'] === false){
+						for(var i = 0; i < data.row.length; i++ ) {
+							var r = data.row[i];
+							html += "<span>" + r.Tips + "</span>";
+						}
+						$("#tips").append(html);
+					}else {
+						$("#tips").append('Something is wrong');
+					}
+				});			
+			});
+			
+		});
+	</script>	
+</head>
+<body>
+	<header id="header">
+		<span>Rick's store</span>
+		<span>Welcome here to choose the guitar you like</span>
+	</header>
+	<section id="wrap">
+		<div id="search-form">
+			<form id="myform">
+				<ul>
+<!-- 					<li>
+						<label for="serialNumber">Serial Number:</label>
+						<input type="input" name="serialNumber" placeholder="Serial Number" id="serialNumber">
+					</li> -->
+
+					<li>
+						<label for="builder">Builder:</label>
+						<input type="input" name="builder" placeholder="builder" id="builder">
+					</li>
+
+<!-- 					<li>
+						<label for="model">Model:</label>
+						<input type="input" name="model" placeholder="model" id="model">
+					</li>
+
+					<li>
+						<label for="type">Type:</label>
+						<input type="input" name="type" placeholder="type" id="type">
+					</li>
+
+					<li>
+						<label for="backWood">Back Wood:</label>
+						<input type="input" name="backWood" placeholder="back wood" id="backWood">
+					</li>
+					<li>
+						<label for="">Top Wood:</label>
+						<input type="input" name="topWood" placeholder="top wood" id="topWood">
+					</li> -->
+<!-- 					<li>
+						<label for="price">Price:</label>
+						<input type="input" name="price" placeholder="price" id="price">
+					</li> -->
+				</ul>
+				<input type="button" name="submit" value="search" id="btnQuery">
+			</form>
+		</div>
+		<div id="result">
+			<h2>Results</h2>
+			<table border="1">
+				<thead>
+					<tr>
+						<th>Serial Number</th>
+						<th>Builder</th>
+						<th>Model</th>
+						<th>Type</th>
+						<th>Back Wood</th>
+						<th>Top Wood</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody id="r-tbody">
+					
+				</tbody>
+			</table>
+			<div id="tips"></div>
+		</div>
+	</section>
+</body>
+</html>
