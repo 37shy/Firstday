@@ -1,9 +1,9 @@
 # Firstday
 ## guitar销售系统v1
-    采用 Sqllite 数据库存储数据; Ajax+jsp&Servlet+Java 实现整个功能；
-> 注意Sqllite文件的路径，建议使用绝对路径
+* 图片一
+![guitar搜索](https://github.com/37shy/Firstday/blob/master/img/%E6%8D%95%E8%8E%B71.PNG "图片一")
 
-![guitar销售系统v1 搜索结果一](https://raw.githubusercontent.com/leoorpio/OOPHomework/master/task_01/img/result01.png "result01")
----
-![guitar销售系统v1 搜索结果二](https://raw.githubusercontent.com/leoorpio/OOPHomework/master/task_01/img/result02.png "result02")
+
+* 图片二
+![guitar搜索](https://github.com/37shy/Firstday/blob/master/img/%E6%8D%95%E8%8E%B71_%E5%89%AF%E6%9C%AC.png "图片二")
 
