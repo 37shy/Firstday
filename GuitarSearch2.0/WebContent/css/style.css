@@ -1,0 +1,113 @@
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	#header {
+		width: 900px;
+		margin: 0 auto;
+		border: 1px solid #000;
+		line-height: 2.2em;
+		padding: 1.5em;
+		box-shadow: 5px 5px 5px #ccc;
+	}
+	
+	#header span:nth-of-type(1) {
+		font-size: 25px;
+		font-weight: 700;
+	}
+	
+	#header span:last-of-type {
+		margin-left: 3em;
+	}
+
+	#wrap {
+		width: 1000px;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+	
+	#search-form {
+		overflow: hidden;
+		margin-bottom: 10px;
+		border: 1px solid #ccc;
+		padding: 1em;
+	}
+		
+	#search-form form ul {
+		list-style-type: none;
+	}
+	
+	#search-form form ul li {
+		float: left;
+		width: 33.33%;
+		margin-bottom: 1em;
+		position: relative;
+		line-height: 2em;
+	}
+	
+	#search-form form input[type=input] {
+		line-height: 2em;
+		width: 60%;
+		position: absolute;
+		right: 2em;
+		text-indent: 1em;
+	}
+
+	#btnQuery {
+		float: right;
+		font-size: 1.2em;
+		width: 100px;
+		background-color: #4A4848;
+		color: #ff8040;
+	}
+
+	#btnQuery:hover {
+		background-color: #8080ff;
+	}
+
+	#result {	
+		height: 500px;
+		border: 1px solid #aaa;
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+	#result h2 {
+	  margin: 10px;
+	}
+	
+	#result table {
+		width: 98%;
+		border-collapse: collapse;
+		text-align: center;
+		align-self: center;
+	}
+
+	#result table thead tr{
+		height: 2.5em;
+		background-color: #000;
+		color: #fff;
+	}
+
+	#r-tbody tr {
+		height: 2em;
+	}
+
+	#r-tbody tr:hover {
+		background-color: #ccc;
+	}
+	
+	#r-tbody tr td:hover{
+		background-color: #bf7070;
+		
+	}
+	 
+	#tips {
+		width: auto;
+		text-align: center;
+		line-height: 3em;
+		font-size: 20px;
+	}
