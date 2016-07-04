@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	body {
+		max-width: 500px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-right: 1px dotted #000;
+		border-left: 1px dotted #000;
+	}
+	
+	p {
+		margin-top: 10px;
+	}
+	
+	body > p:nth-of-type(1) {
+		margin: 180px auto 20px;
+	}
+	
+	form input[type=text],
+	form input[type=password] {
+		height: 1.8em;
+	}
+	
+	form input[type=text]:focus,
+	form input[type=password]:focus {
+		border: 1px solid #0db4b4;
+	
+	}
+	form input[type=submit] {
+		border-style: none;
+		width: 100%;
+		height: 2em;
+		font-weight: 700;
+		font-size: 1em;
+	}
+	
+	form input[type=submit]:hover {
+		background-color: #acc;
+	}
+</style>
+<body>
+	<p>登录界面</p>
+	<form action="LoginVerify" method="post">
+		<p>
+			<label for="user">用户名：
+				<input type="text" name="username" id="user">
+			</label>
+		</p>
+		<p>
+			<label for="pwd">密&emsp;码：
+				<input type="password" name="password" id="pwd">
+			</label>
+		</p>
+		
+		<p>
+			<label>用户类型：
+				<label for="student">
+					<input type="radio" name="person" value="student" id="student">学生
+				</label>
+				<label for="professor">
+					<input type="radio" name="person" value="professor" id="professor">教授
+				</label>
+			</label>
+		</p>
+		<input type="submit" value="登录">	
+	</form>
+	<div>
+		<a href="managementStudent.jsp">课程管理</a>
+		<a href="managementTeacher.jsp">教师管理</a>
+	</div>
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+</body>
+</html>
